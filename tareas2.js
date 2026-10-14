@@ -42,3 +42,21 @@ function listar() {
         `javascript: ${contadorCategoria.javascript}, php: ${contadorCategoria.php}`
     );
 }
+
+// ----------------------------------------------------
+// 3. BUSCAR POR TEXTO (nombre o responsable)
+// ----------------------------------------------------
+function buscarPorTexto(texto) {
+    let resultado = tareas.filter(t =>
+        t.nombre.toLowerCase().includes(texto.toLowerCase()) ||
+        t.responsable.toLowerCase().includes(texto.toLowerCase())
+    );
+
+    if (resultado.length === 0) {
+        console.log(`No se encontraron tareas con "${texto}".`);
+    } else {
+        console.table(resultado);
+    }
+    return resultado;
+}
+

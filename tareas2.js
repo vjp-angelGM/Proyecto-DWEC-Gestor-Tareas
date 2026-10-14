@@ -80,3 +80,27 @@ function eliminarPorId(id) {
     console.log(`Tarea "${eliminada.nombre}" eliminada.`);
     return true;
 }
+
+
+// Ejemplo de creación de tarea
+anadirTarea({
+    id: 1, nombre: "Aprender bucles", categoria: "javascript",
+    fecha: "2026-10-20", prioridad: "alta", estado: "pendiente", responsable: "Ana"
+});
+
+anadirTarea({
+    id: 2, nombre: " maquetar cabecera", categoria: "html",
+    fecha: "2026-10-22", prioridad: "media", estado: "en curso", responsable: "Luis"
+});
+
+anadirTarea({
+    id: 3, nombre: "Conectar base de datos", categoria: "php",
+    fecha: "2026-10-25", prioridad: "alta", estado: "pendiente", responsable: "Ana"
+});
+
+
+//Llamadas a las funciones 
+listar();
+buscarPorTexto("Luis");
+eliminarPorId(3);
+listar();

@@ -60,3 +60,23 @@ function buscarPorTexto(texto) {
     return resultado;
 }
 
+// ----------------------------------------------------
+// 4. ELIMINAR POR ID
+// ----------------------------------------------------
+function eliminarPorId(id) {
+    let indice = tareas.findIndex(t => t.id === id);
+
+    if (indice === -1) {
+        console.warn(`No existe ninguna tarea con id ${id}.`);
+        return false;
+    }
+
+    let eliminada = tareas.splice(indice, 1)[0];
+
+    if (contadorCategoria.hasOwnProperty(eliminada.categoria)) {
+        contadorCategoria[eliminada.categoria]--;
+    }
+
+    console.log(`Tarea "${eliminada.nombre}" eliminada.`);
+    return true;
+}
